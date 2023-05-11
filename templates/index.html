@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+
+</head>
+<body>
+    <h1>Registros</h1>
+    <a href="/agregar">Agregar registro</a>
+    
+
+
+    <div class="container">
+        <div class="form-container">
+          <!-- Tu formulario HTML aquí -->
+        </div>
+      </div>
+
+
+<!--     <table>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Direccion</th>
+            <th>Acciones</th>
+        </tr>
+        {% for registro in registros %}
+            <tr>
+                <td>{{ registro[0] }}</td>
+                <td>{{ registro[1] }}</td>
+                <td>{{ registro[2] }}</td>
+                <td>{{ registro[3] }}</td>
+                <td>
+                    <a href="/editar/{{ registro[0] }}">Editar</a>
+                    <a href="/eliminar/{{ registro[0] }}">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table> -->
+
+
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {% for registro in registros %}
+                <td>{{ registro[0] }}</td>
+                <td>{{ registro[1] }}</td>
+                <td>{{ registro[2] }}</td>
+                <td>{{ registro[3] }}</td>
+                <td>
+                    <a href="/editar/{{ registro[0] }}">Editar</a>
+                    <a href="/eliminar/{{ registro[0] }}">Eliminar</a>
+                </td>
+          </tr>
+          
+        </tbody>
+        {% endfor %}
+      </table>
+</body>
+</html>
+ 
